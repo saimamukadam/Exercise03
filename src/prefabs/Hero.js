@@ -22,7 +22,7 @@ class Hero extends Phaser.Physics.Arcade.Sprite {
             dash: new DashState(),
             hurt: new HurtState(),
             circular: new CircularState(),
-        }, [scene, this])   // pass these as arguments to maintain scene/object context in the FSM
+        }, [ scene, this ])   // pass these as arguments to maintain scene/object context in the FSM
     }
 }
 
@@ -93,6 +93,11 @@ class MoveState extends State {
         // hurt if H key input (just for demo purposes)
         if(Phaser.Input.Keyboard.JustDown(HKey)) {
             this.stateMachine.transition('hurt')
+            return
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(FKey)) {
+            this.stateMachine.transition('circular')
             return
         }
 
@@ -193,10 +198,6 @@ class HurtState extends State {
     }
 }
 
-class HurtState extends State {
-
-}
-
 class CircularState extends State {
     enter(scene, hero) {
         // hero.setTint(0x0000FF)
@@ -206,5 +207,3 @@ class CircularState extends State {
         })
     }
 }
-
-//3:19pm

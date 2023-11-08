@@ -1,6 +1,6 @@
 // Example 03: Scrolling States
-// Name:
-// Date: 
+// Name: Saima Mukadam
+// Date: 11/6/23
 
 'use strict'
 

@@ -35,6 +35,6 @@ class Play extends Phaser.Scene {
 
     update() {
         // make sure we step (ie update) the hero's state machine
-        // this.heroFSM.step()
+        this.heroFSM.step()
     }
 }
